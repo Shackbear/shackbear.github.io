@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>centos6和centos7修改网卡名的几种方法 | ɶ�Ǳ���</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="linux" />
+    
+    <meta name="description" content="centos6与centos7网卡重命名方法标签（空格分隔）： linux #####通常网卡名称是系统自动识别的，存在于注册表中，但有些网友因为某些原因想要修改CentOS6.x系统的网卡名称，那么网卡名称要如何更改呢？CentOS 6.X下修改网卡名称有三种方法：#方法1： 修改UDEV文件，删除里面的内容；用命令，重新定义名字，两个名字都要改； 方法2： 在centos6中，可以直接使用se">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos6和centos7修改网卡名的几种方法">
+<meta property="og:url" content="http://fengjianxiong.cn/2018/03/18/centos6和centos7修改网卡名的几种方法/index.html">
+<meta property="og:site_name" content="ɶ�Ǳ���">
+<meta property="og:description" content="centos6与centos7网卡重命名方法标签（空格分隔）： linux #####通常网卡名称是系统自动识别的，存在于注册表中，但有些网友因为某些原因想要修改CentOS6.x系统的网卡名称，那么网卡名称要如何更改呢？CentOS 6.X下修改网卡名称有三种方法：#方法1： 修改UDEV文件，删除里面的内容；用命令，重新定义名字，两个名字都要改； 方法2： 在centos6中，可以直接使用se">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-17T20:18:26.907Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="centos6和centos7修改网卡名的几种方法">
+<meta name="twitter:description" content="centos6与centos7网卡重命名方法标签（空格分隔）： linux #####通常网卡名称是系统自动识别的，存在于注册表中，但有些网友因为某些原因想要修改CentOS6.x系统的网卡名称，那么网卡名称要如何更改呢？CentOS 6.X下修改网卡名称有三种方法：#方法1： 修改UDEV文件，删除里面的内容；用命令，重新定义名字，两个名字都要改； 方法2： 在centos6中，可以直接使用se">
+    
+
+    
+        <link rel="alternate" href="/" title="ɶ�Ǳ���" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-centos6和centos7修改网卡名的几种方法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        centos6和centos7修改网卡名的几种方法
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/03/18/centos6和centos7修改网卡名的几种方法/" class="article-date">
+            <time datetime="2018-03-17T20:17:30.000Z" itemprop="datePublished">2018-03-18</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/linux/">linux</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="centos6与centos7网卡重命名方法"><a href="#centos6与centos7网卡重命名方法" class="headerlink" title="centos6与centos7网卡重命名方法"></a><strong>centos6与centos7网卡重命名方法</strong></h1><h2 id="标签（空格分隔）：-linux"><a href="#标签（空格分隔）：-linux" class="headerlink" title="标签（空格分隔）： linux "></a>标签（空格分隔）： linux </h2><h2 id="通常网卡名称是系统自动识别的，存在于注册表中，但有些网友因为某些原因想要修改CentOS6-x系统的网卡名称，那么网卡名称要如何更改呢？"><a href="#通常网卡名称是系统自动识别的，存在于注册表中，但有些网友因为某些原因想要修改CentOS6-x系统的网卡名称，那么网卡名称要如何更改呢？" class="headerlink" title="#####通常网卡名称是系统自动识别的，存在于注册表中，但有些网友因为某些原因想要修改CentOS6.x系统的网卡名称，那么网卡名称要如何更改呢？"></a>#####通常网卡名称是系统自动识别的，存在于注册表中，但有些网友因为某些原因想要修改CentOS6.x系统的网卡名称，那么网卡名称要如何更改呢？</h2><h4 id="CentOS-6-X下修改网卡名称有三种方法："><a href="#CentOS-6-X下修改网卡名称有三种方法：" class="headerlink" title="CentOS 6.X下修改网卡名称有三种方法："></a>CentOS 6.X下修改网卡名称有三种方法：</h4><p>#<br>方法1：</p>
+<p>修改UDEV文件，删除里面的内容；用命令，重新定义名字，两个名字都要改；</p>
+<p>方法2：</p>
+<p>在centos6中，可以直接使用setup，设置一块新网卡，填上eth1、ip等内容。</p>
+<p>在 CentOS 6 中，默认的 kudzu 这个识别硬件的服务不存在了，基本上所有的硬件管理都通过 Udev 来管理了。</p>
+<p>如果在 Centos 6 中加了一个新的硬件，如网卡只需要重新启动 udev 就行了。</p>
+<p>start_udev</p>
+<p>它会重新扫描新加的硬件并做相关的处理。</p>
+<p>如果新加的是网卡，或者是例如虚拟机克隆等原因，导致识别不对也或者有时想更新网卡的名字，并不需要编辑<code>/etc/sysconfig/network-scripts/</code>下的内容，向上面运行完后不正常，直接修改 udev 有关网络的配置即可。</p>
+<p>有关网络的 udev 的具体网卡序号的配置文件是 <code>/etc/udev/rules.d/70-persistent-net.rules</code> 这个文件。</p>
+<p>大概内容如下：</p>
+<p><code>SUBSYSTEM==&quot;net&quot;， ACTION==&quot;add&quot;， DRIVERS==&quot;?*&quot;， ATTR{address}==&quot;54:52:00:78:e8:2e&quot;， ATTR{type}==&quot;1&quot;， KERNEL==&quot;eth*&quot;， NAME=&quot;eth1&quot; # PCI device</code></p>
+<p><code>0x1af4:0x1000 （virtio-pci） SUBSYSTEM==&quot;net&quot;， ACTION==&quot;add&quot;， DRIVERS==&quot;?*&quot;， ATTR{address}==&quot;54:52:00:04:19:6c&quot;， ATTR{type}==&quot;1&quot;， KERNEL==&quot;eth*&quot;，NAME=&quot;eth0&quot;</code></p>
+<p>参照以上内容，最多修改一下 MAC 地址和 NAME 即可。</p>
+<p>修改完成后，使用 udev 的命令测试下：</p>
+<p>udevadm test /sys/class/net/eth0/</p>
+<p>此命令可以很详细的显示 udev 的识别和处理的过程。</p>
+<p>注意：</p>
+<p>新添加的硬件，如果在 setup 和 system-config-network-tui中添加了网卡，但 /etc/sysconfig/network-scripts/ 找不到配置文件时。</p>
+<p>是因为这些命令默认会将生成的配置文件放到/etc/sysconfig/networking/devices/，只要将下面的二个配置文件放到 /etc/sysconfig/network-scripts/，再使用</p>
+<p>system-config-network-tui进行配置即可。</p>
+<p>代码示例：cp /etc/sysconfig/networking/devices/* /etc/sysconfig/network-scripts/</p>
+<p>然后重新启动后就可以生效了。</p>
+<p>方法3：</p>
+<p>1、在grub里增加biosdevname=0的启动参数，形如</p>
+<p><code>kernel /vmlinuz-2.6.32-131.21.1.el6.i686 ro root=/dev/mapper/vg_test-lv_root rd_LVM_LV=vg_test/lv_root rd_LVM_LV=vg_test/lv_swap rd_NO_LUKS rd_NO_MD rd_NO_DM LANG=en_US.UTF-8 SYSFONT=latar</code></p>
+<p><code>cyrheb-sun16 KEYBOARDTYPE=pc KEYTABLE=us crashkernel=auto rhgb quiet biosdevname=0</code></p>
+<p>2、删除udev的配置文件<code>rm -f /etc/udev/rules.d/70-persistent-net.rules</code></p>
+<p>3、把网卡配置文件改名</p>
+<p><code>mv ifcfg-em1 ifcfg-eth0</code></p>
+<p>4、把网卡配置文件内容修正，把ens33的全部改成eth0</p>
+<p>可以使用 <code>sed -i ‘s/em1/eth0/g’ ifcfg-eth0</code> 进行替换。</p>
+<p>5、重启系统即可</p>
+<hr>
+<p># </p>
+<p># </p>
+<p># </p>
+<h4 id="CentOS-7-X下修改网卡名称的两种方法："><a href="#CentOS-7-X下修改网卡名称的两种方法：" class="headerlink" title="CentOS 7.X下修改网卡名称的两种方法："></a>CentOS 7.X下修改网卡名称的两种方法：</h4><hr>
+<p>大家都知道CentOS7默认的网卡名称是和设备名称是随机的，如果要修改网卡名称以 eth 开头，有两种方式，如下：</p>
+<p>第一种方式</p>
+<p>这种方式适合在安装操作系统的时候进行设置，</p>
+<p>点击 Tab，打开kernel启动选项，</p>
+<p>末尾增加内核参数： <code>net.ifnames=0   biosdevname=0</code></p>
+<p>输入完成之后回车正常安装操作系统就好了。<br>第二种方式</p>
+<p>修改网卡配置文件中的 DEVICE= 参数改为 eth0 <code>[root@centos ~]# cd /etc/sysconfig/network-scripts/
+[root@centos network-scripts]# vi ifcfg-ens33
+TYPE=Ethernet
+BOOTPROTO=dhcp
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=ens33
+UUID=8a3eade8-005c-46df-81f2-6e2598457bac</code><br><code>#DEVICE=ens33</code><br><code>DEVICE=eth0</code><br><code>ONBOOT=yes</code><br>网卡配置文件名称改为 ifcfg-eth0<br>[root@centos network-scripts]# mv ifcfg-ens33 ifcfg-eth0<br>因 CentOS7 采用 grub2 引导，还需要对 grub2 进行修改，编辑 <code>/etc/default/grub</code> 配置文件，在 <code>GRUB_CMDLINE_LINUX</code> 这个参数后面加入 <code>net.ifnames=0 biosdevname=0</code><br><code>[root@centos network-scripts]# vi /etc/default/grub
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR=&quot;$(sed &#39;s, release .*$,,g&#39; /etc/system-release)&quot;
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT=&quot;console&quot;
+GRUB_CMDLINE_LINUX=&quot;rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet net.ifnames=0 biosdevname=0&quot;
+GRUB_DISABLE_RECOVERY=&quot;true&quot;</code><br>用 <code>grub2-mkconfig -o /boot/grub2/grub.cfg</code> 命令重新生成GRUB配置并更新内核<br><code>[root@centos network-scripts]# grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-327.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-327.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-4dd6b54f74c94bff9e92c61d669fc195
+Found initrd image: /boot/initramfs-0-rescue-4dd6b54f74c94bff9e92c61d669fc195.img
+done</code><br>重启系统<br><code>[root@centos network-scripts]# reboot</code><br>重启之后验证网卡名称:<br><code>[root@centos ~]# ifconfig 
+eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt; mtu 1500
+  inet 192.168.56.130 netmask 255.255.255.0 broadcast 192.168.56.255
+  inet6 fe80::20c:29ff:fe6d:d894 prefixlen 64 scopeid 0x20&lt;link&gt;
+  ether 00:0c:29:6d:d8:94 txqueuelen 1000 (Ethernet)
+  RX packets 27413 bytes 38532163 (36.7 MiB)
+  RX errors 0 dropped 0 overruns 0 frame 0
+  TX packets 7727 bytes 702194 (685.7 KiB)
+  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0</code><br><code>lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt; mtu 65536
+  inet 127.0.0.1 netmask 255.0.0.0
+  inet6 ::1 prefixlen 128 scopeid 0x10&lt;host&gt;
+  loop txqueuelen 0 (Local Loopback)
+  RX packets 0 bytes 0 (0.0 B)
+  RX errors 0 dropped 0 overruns 0 frame 0
+  TX packets 0 bytes 0 (0.0 B)
+  TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0</code></p>
+<p>以上就是centos6和7修改网卡的几种方法，有意见和建议都可以评论，感谢收看</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/shackbear" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/https:/weibo.com/539970456" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/18/centos6和centos7修改网卡名的几种方法/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/18/centos6和centos7修改网卡名的几种方法/" class="title">centos6和centos7修改网卡名的几种方法</a></p>
+                            <p class="item-date"><time datetime="2018-03-17T20:17:30.000Z" itemprop="datePublished">2018-03-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/linux/" style="font-size: 10px;">linux</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 fengjianxiong</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'disqus';
+    
+    
+    var disqus_url = 'http://fengjianxiong.cn/2018/03/18/centos6和centos7修改网卡名的几种方法/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
