@@ -3,24 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Python中read()、readline()和readlines()三者间的区别和用法 | </title>
+    <title>shell中if语句的使用 | </title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="python" />
+        <meta name="keywords" content="shell" />
     
-    <meta name="description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
-<meta name="keywords" content="python">
+    <meta name="description" content="转自：http://lovelace.blog.51cto.com/1028430/1211353 bash中如何实现条件判断？条件测试类型：    整数测试    字符测试    文件测试 一、条件测试的表达式：    [ expression ]  括号两端必须要有空格    [[ expression ]] 括号两端必须要有空格    test expression组合测试条件： -a: a">
+<meta name="keywords" content="shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python中read()、readline()和readlines()三者间的区别和用法">
-<meta property="og:url" content="http://fengjianxiong.cn/2018/03/20/Python中read、readline和readlines三者间的区别和用法/index.html">
+<meta property="og:title" content="shell中if语句的使用">
+<meta property="og:url" content="http://fengjianxiong.cn/2018/04/21/shellif/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
+<meta property="og:description" content="转自：http://lovelace.blog.51cto.com/1028430/1211353 bash中如何实现条件判断？条件测试类型：    整数测试    字符测试    文件测试 一、条件测试的表达式：    [ expression ]  括号两端必须要有空格    [[ expression ]] 括号两端必须要有空格    test expression组合测试条件： -a: a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-19T20:46:54.028Z">
+<meta property="og:image" content="http://fengjianxiong.cn/image/shell.jpg">
+<meta property="og:updated_time" content="2018-04-20T17:22:16.413Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python中read()、readline()和readlines()三者间的区别和用法">
-<meta name="twitter:description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
+<meta name="twitter:title" content="shell中if语句的使用">
+<meta name="twitter:description" content="转自：http://lovelace.blog.51cto.com/1028430/1211353 bash中如何实现条件判断？条件测试类型：    整数测试    字符测试    文件测试 一、条件测试的表达式：    [ expression ]  括号两端必须要有空格    [[ expression ]] 括号两端必须要有空格    test expression组合测试条件： -a: a">
+<meta name="twitter:image" content="http://fengjianxiong.cn/image/shell.jpg">
     
 
     
@@ -127,18 +129,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/python/">python</a>
+    <a class="page-title-link" href="/categories/linux/">linux</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-Python中read、readline和readlines三者间的区别和用法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-shellif" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Python中read()、readline()和readlines()三者间的区别和用法
+        shell中if语句的使用
         </h1>
     
 
@@ -148,43 +150,50 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/03/20/Python中read、readline和readlines三者间的区别和用法/" class="article-date">
-            <time datetime="2018-03-19T17:42:31.000Z" itemprop="datePublished">2018-03-20</time>
+        <a href="/2018/04/21/shellif/" class="article-date">
+            <time datetime="2018-04-20T16:44:14.000Z" itemprop="datePublished">2018-04-21</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
+        <a class="tag-link" href="/tags/shell/">shell</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="前言"><a href="#前言" class="headerlink" title="==前言=="></a>==前言==</h4><p>众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍：</p>
-<h4 id="准备"><a href="#准备" class="headerlink" title="==准备=="></a>==准备==</h4><p>假设a.txt的内容如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>一、read([size])方法</p>
-<p>read([size])方法从文件当前位置起读取size个字节，若无参数size，则表示读取至文件结束为止，它范围为字符串对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">lines = f.read()</span><br><span class="line">print lines</span><br><span class="line">print(type(lines))</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br><span class="line">&lt;type &apos;str&apos;&gt;  #字符串类型</span><br></pre></td></tr></table></figure></p>
-<p>二、readline()方法</p>
-<p>从字面意思可以看出，该方法每次读出一行内容，所以，读取时占用内存小，比较适合大文件，该方法返回一个字符串对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">line = f.readline()</span><br><span class="line">print(type(line))</span><br><span class="line">while line:</span><br><span class="line">   print line,</span><br><span class="line">   line = f.readline()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;type &apos;str&apos;&gt;</span><br><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>三、readlines()方法读取整个文件所有行，保存在一个列表(list)变量中，每行作为一个元素，但读取大文件会比较占内存。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">lines = f.readlines()</span><br><span class="line">print(type(lines))</span><br><span class="line">for line in lines:</span><br><span class="line">   print line，</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;type &apos;list&apos;&gt;</span><br><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>四、linecache模块</p>
-<p>当然，有特殊需求还可以用linecache模块，比如你要输出某个文件的第n行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#输出第2行   </span><br><span class="line"></span><br><span class="line">text = linecache.getline(&apos;a.txt&apos;,2)</span><br><span class="line">print text</span><br></pre></td></tr></table></figure>
-<p>对于大文件效率还可以。</p>
-<p>==总结==</p>
-<p>以上就是这篇文章的全部内容了，希望本文的内容对大家的学习或者工作能带来一定的帮助。</p>
+            <p>转自：<a href="http://lovelace.blog.51cto.com/1028430/1211353" target="_blank" rel="noopener">http://lovelace.blog.51cto.com/1028430/1211353</a></p>
+<p>bash中如何实现条件判断？<br>条件测试类型：<br>    整数测试<br>    字符测试<br>    文件测试</p>
+<p>一、条件测试的表达式：<br>    [ expression ]  括号两端必须要有空格<br>    [[ expression ]] 括号两端必须要有空格<br>    test expression<br>组合测试条件：</p>
+<p>-a: and<br>-o: or<br>!:  非<br>二、整数比较：</p>
+<p>-eq 测试两个整数是否相等<br>-ne 测试两个整数是否不等<br>-gt 测试一个数是否大于另一个数<br>-lt 测试一个数是否小于另一个数<br>-ge 大于或等于<br>-le 小于或等于<br>命令间的逻辑关系</p>
+<p>逻辑与：&amp;&amp;<br>        第一个条件为假 第二个条件不用在判断，最总结果已经有<br>        第一个条件为真，第二个条件必须得判断</p>
+<p>逻辑或：||<br>三、字符串比较</p>
+<p>== 等于  两边要有空格<br>!= 不等</p>
+<blockquote>
+<p> 大于<br>&lt;  小于<br>四、文件测试</p>
+</blockquote>
+<p>-z string 测试指定字符是否为空，空着真，非空为假<br>-n string 测试指定字符串是否为不空，空为假 非空为真<br>-e FILE 测试文件是否存在<br>-f file 测试文件是否为普通文件<br>-d file 测试指定路径是否为目录<br>-r file 测试文件对当前用户是否可读<br>-w file 测试文件对当前用户是否可写<br>-x file 测试文件对当前用户是都可执行<br>-z  是否为空  为空则为真<br>-a  是否不空<br>五、if语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if 判断条件 0为真 其他都为假</span><br><span class="line"></span><br><span class="line">#####单分支if语句:</span><br><span class="line">if 判断条件；then</span><br><span class="line">    statement1</span><br><span class="line">    statement2</span><br><span class="line">    .......</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>#####双分支的if语句:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if 判断条件；then</span><br><span class="line">    statement1</span><br><span class="line">    statement2</span><br><span class="line">    .....</span><br><span class="line">    else</span><br><span class="line">    statement3</span><br><span class="line">    statement4</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>Note:<br>if语句进行判断是否为空<br><figure class="highlight plain"><figcaption><span>"$name" </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">等同于</span><br></pre></td></tr></table></figure></p>
+<p>[ ! “$name” ]<br>[ -z “$name” ]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Note:</span><br><span class="line">使用if语句的时候进行判断如果是进行数值类的判断，建议使用let(())进行判断，对于字符串等使用test[ ] or [[ ]] 进行判断</span><br><span class="line">(())中变量是可以不使用$来引用的</span><br><span class="line"></span><br><span class="line">example：表述数字范围的时候 可以使用if可以是使用case</span><br></pre></td></tr></table></figure></p>
+<p>if [ $x -gt 90 -o $x -lt 100 ]<br>case $x in<br>100)<br>9[0-9])<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这个语句的意思是如果$name为空，那么X=X成立折执行下面的结果；</span><br><span class="line"></span><br><span class="line">```if [ &quot;X$name&quot; != &quot;x&quot; ]</span><br></pre></td></tr></table></figure></p>
+<p>写脚本的时候很多时候需要用到回传命令，$?如果上一个命令执行成功，回传值为0，否则为1~255之间的任何一个</p>
+<p>0为真<br>非0为假<br>条件测试的写法：</p>
+<p>1、执行一个命令的结果<br><figure class="highlight plain"><figcaption><span>grep -q "rm" fs.sh;then ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2、传回一个命令执行结果的相反值</span><br><span class="line">``` if ！grep -q &quot;rm&quot; fs.sh;then</span><br></pre></td></tr></table></figure></p>
+<p>3、使用复合命令（（算式））<br><figure class="highlight plain"><figcaption><span>((a>b));then ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4、使用bash关键字 [[判断式]]</span><br><span class="line">``` if [[ str &gt; xyz ]];then</span><br></pre></td></tr></table></figure></p>
+<p>5、使用内置命令：test 判断式<br><figure class="highlight plain"><figcaption><span>test "str" \> "xyz";then ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">6、使用内置命令：[判断式]  类似test</span><br><span class="line">``` if [ &quot;str&quot; \&gt; &quot;xyz&quot; ];then</span><br></pre></td></tr></table></figure></p>
+<p>7、使用-a -o进行逻辑组合<br><figure class="highlight plain"><figcaption><span>-r filename -a -x filename ] ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">8、命令&amp;&amp;命令</span><br><span class="line">``` if grep -q &quot;rm&quot; fn.sh &amp;&amp; [ $a -lt 100 ];then</span><br></pre></td></tr></table></figure></p>
+<p>9、命令||命令<br><figure class="highlight plain"><figcaption><span>grep -q "rm" fn.sh || [ $a -lt 100 ];then ```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####示例脚本（</span><br><span class="line"></span><br><span class="line">写一段脚本，输入一个测验成绩，根据下面的标准，输出他的评分</span><br><span class="line"></span><br><span class="line">成绩（A-F）。</span><br><span class="line"></span><br><span class="line">A: 90–100</span><br><span class="line"></span><br><span class="line">B: 80–89</span><br><span class="line"></span><br><span class="line">C: 70–79</span><br><span class="line"></span><br><span class="line">D: 60–69</span><br><span class="line"></span><br><span class="line">F: &lt;60</span><br><span class="line"></span><br><span class="line">）</span><br></pre></td></tr></table></figure></p>
+<p>#/bin/bash</p>
+<p>#import an argument<br>read -p “Please input your grade:” x<br>declare -i x</p>
+<p>#jugemet $x value is none or not<br>if [ “$x” == “” ];then<br>    echo “You don’t input your grade….”<br>    exit 5<br>fi</p>
+<p>#jugement the gread level<br>if [[ “$x” -ge “90” &amp;&amp; “$x” -le “100” ]];then<br>    echo “Congratulation,Your grade is A.”<br>elif [[ “$x” -ge “80” &amp;&amp; “$x” -le “89” ]];then<br>    echo “Good,Your grade is B.”<br>elif [[ “$x” -ge “70” &amp;&amp; “$x” -le “79” ]];then<br>    echo “Ok.Your grade is C.”<br>elif [[ “$x” -ge “60” &amp;&amp; “$x” -le “69” ]];then<br>    echo “Yeah,Your grade is D.”<br>elif [[ “$x” -lt “60” ]];then<br>    echo “Right,Your grade is F.”<br>else<br>    echo “Unknow argument….”<br>fi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">执行结果：</span><br></pre></td></tr></table></figure></p>
+<p>[root@lovelace if]# ./grade.sh<br>    Please input your grade:<br>    You don’t input your grade….<br>[root@lovelace if]# ./grade.sh<br>    Please input your grade:53<br>    Right,Your grade is F.<br>[root@lovelace if]# ./grade.sh<br>    Please input your grade:88<br>    Good,Your grade is B.<br><code>`</code></p>
+<p>#####总结：条件判断在shell语句中经常用到，需要熟练掌握，在此基础上才能练就一手很好的脚本编写能力。祝各位每天都能获得很大的进步…..</p>
 
         </div>
         <footer class="article-footer">
@@ -280,20 +289,10 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/2018/03/22/python实现readline去掉换行符/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            python实现readline去掉换行符\n等特殊字符
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/03/18/centos6和centos7修改网卡名的几种方法/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/11/asn/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">centos6和centos7修改网卡名的几种方法</p>
+        <p class="article-nav-title">什么是 ASN (自治系统号)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -499,7 +498,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     var disqus_shortname = 'disque';
     
     
-    var disqus_url = 'http://fengjianxiong.cn/2018/03/20/Python中read、readline和readlines三者间的区别和用法/';
+    var disqus_url = 'http://fengjianxiong.cn/2018/04/21/shellif/';
     
     (function() {
     var dsq = document.createElement('script');

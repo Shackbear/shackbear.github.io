@@ -3,24 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Python中read()、readline()和readlines()三者间的区别和用法 | </title>
+    <title>标签：: shell | </title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="python" />
-    
-    <meta name="description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
-<meta name="keywords" content="python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python中read()、readline()和readlines()三者间的区别和用法">
-<meta property="og:url" content="http://fengjianxiong.cn/2018/03/20/Python中read、readline和readlines三者间的区别和用法/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title">
+<meta property="og:url" content="http://fengjianxiong.cn/tags/shell/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-19T20:46:54.028Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python中read()、readline()和readlines()三者间的区别和用法">
-<meta name="twitter:description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
+<meta name="twitter:title">
     
 
     
@@ -127,119 +120,76 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/python/">python</a>
+    <i class="icon fa fa-tag"></i>标签：: <em>shell</em>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-Python中read、readline和readlines三者间的区别和用法" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2018/04/21/shellif/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/shell.jpg)" alt="shell中if语句的使用" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://fengjianxiong.cn/2018/04/21/shellif/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/linux/">linux</a>
+            </div>
+            <div class="date"><time datetime="2018-04-20T16:44:14.000Z" itemprop="datePublished">2018-04-21</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        Python中read()、readline()和readlines()三者间的区别和用法
+        <a href="/2018/04/21/shellif/">shell中if语句的使用</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2018/03/20/Python中read、readline和readlines三者间的区别和用法/" class="article-date">
-            <time datetime="2018-03-19T17:42:31.000Z" itemprop="datePublished">2018-03-20</time>
-        </a>
-    </div>
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <h4 id="前言"><a href="#前言" class="headerlink" title="==前言=="></a>==前言==</h4><p>众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍：</p>
-<h4 id="准备"><a href="#准备" class="headerlink" title="==准备=="></a>==准备==</h4><p>假设a.txt的内容如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>一、read([size])方法</p>
-<p>read([size])方法从文件当前位置起读取size个字节，若无参数size，则表示读取至文件结束为止，它范围为字符串对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">lines = f.read()</span><br><span class="line">print lines</span><br><span class="line">print(type(lines))</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br><span class="line">&lt;type &apos;str&apos;&gt;  #字符串类型</span><br></pre></td></tr></table></figure></p>
-<p>二、readline()方法</p>
-<p>从字面意思可以看出，该方法每次读出一行内容，所以，读取时占用内存小，比较适合大文件，该方法返回一个字符串对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">line = f.readline()</span><br><span class="line">print(type(line))</span><br><span class="line">while line:</span><br><span class="line">   print line,</span><br><span class="line">   line = f.readline()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;type &apos;str&apos;&gt;</span><br><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>三、readlines()方法读取整个文件所有行，保存在一个列表(list)变量中，每行作为一个元素，但读取大文件会比较占内存。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">lines = f.readlines()</span><br><span class="line">print(type(lines))</span><br><span class="line">for line in lines:</span><br><span class="line">   print line，</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;type &apos;list&apos;&gt;</span><br><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>四、linecache模块</p>
-<p>当然，有特殊需求还可以用linecache模块，比如你要输出某个文件的第n行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#输出第2行   </span><br><span class="line"></span><br><span class="line">text = linecache.getline(&apos;a.txt&apos;,2)</span><br><span class="line">print text</span><br></pre></td></tr></table></figure>
-<p>对于大文件效率还可以。</p>
-<p>==总结==</p>
-<p>以上就是这篇文章的全部内容了，希望本文的内容对大家的学习或者工作能带来一定的帮助。</p>
-
-        </div>
-        <footer class="article-footer">
-            
-
-    <div class="bdsharebuttonbox">
-    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
-    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
-    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
-</div>
-<script>
-window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-<style>
-    .bdshare_popup_box {
-        border-radius: 4px;
-        border: #e1e1e1 solid 1px;
-    }
-    .bdshare-button-style0-16 a,
-    .bdshare-button-style0-16 .bds_more {
-        padding-left: 20px;
-        margin: 6px 10px 6px 0;
-    }
-    .bdshare_dialog_list a,
-    .bdshare_popup_list a,
-    .bdshare_popup_bottom a {
-        font-family: 'Microsoft Yahei';
-    }
-    .bdshare_popup_top {
-        display: none;
-    }
-    .bdshare_popup_bottom {
-        height: auto;
-        padding: 5px;
-    }
-</style>
-
-
-
-        </footer>
+        <p class="article-excerpt">
+            转自：http://lovelace.blog.51cto.com/1028430/1211353
+bash中如何实现条件判断？条件测试类型：    整数测试    字符测试    文件测试
+一、条件测试的表达式：    [ expression ]  括号两端必须要有空格    [[ expression ]] 括号两端必须要有空格    test expression组合测试条件：
+-a: a
+        </p>
     </div>
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
+
 
 
                         </div>
@@ -276,29 +226,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2018/03/22/python实现readline去掉换行符/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            python实现readline去掉换行符\n等特殊字符
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/2018/03/18/centos6和centos7修改网卡名的几种方法/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">centos6和centos7修改网卡名的几种方法</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -499,13 +426,11 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     var disqus_shortname = 'disque';
     
     
-    var disqus_url = 'http://fengjianxiong.cn/2018/03/20/Python中read、readline和readlines三者间的区别和用法/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
