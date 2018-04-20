@@ -18,7 +18,7 @@
 <meta property="og:description" content="转自：http://lovelace.blog.51cto.com/1028430/1211353 bash中如何实现条件判断？条件测试类型：    整数测试    字符测试    文件测试 一、条件测试的表达式： [ expression ]  括号两端必须要有空格 [[ expression ]] 括号两端必须要有空格 test expression 组合测试条件： -a: and-o: or">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://fengjianxiong.cn/image/shell.jpg">
-<meta property="og:updated_time" content="2018-04-20T17:47:50.285Z">
+<meta property="og:updated_time" content="2018-04-20T18:00:20.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell中if语句的使用">
 <meta name="twitter:description" content="转自：http://lovelace.blog.51cto.com/1028430/1211353 bash中如何实现条件判断？条件测试类型：    整数测试    字符测试    文件测试 一、条件测试的表达式： [ expression ]  括号两端必须要有空格 [[ expression ]] 括号两端必须要有空格 test expression 组合测试条件： -a: and-o: or">
@@ -177,11 +177,7 @@ test expression
 <p>-eq 测试两个整数是否相等<br>-ne 测试两个整数是否不等<br>-gt 测试一个数是否大于另一个数<br>-lt 测试一个数是否小于另一个数<br>-ge 大于或等于<br>-le 小于或等于<br>命令间的逻辑关系</p>
 <p>逻辑与：&amp;&amp;<br>        第一个条件为假 第二个条件不用在判断，最总结果已经有<br>        第一个条件为真，第二个条件必须得判断</p>
 <p>逻辑或：||</p>
-<p>三、字符串比较</p>
-<p> == 等于  两边要有空格<br> != 不等</p>
-<blockquote>
-<p> 大于<br> &lt;  小于</p>
-</blockquote>
+<p>三、字符串比较<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">== 等于  两边要有空格</span><br><span class="line">!= 不等</span><br><span class="line">&gt;  大于</span><br><span class="line">&lt;  小于</span><br></pre></td></tr></table></figure></p>
 <p>四、文件测试</p>
 <p>-z string 测试指定字符是否为空，空着真，非空为假<br>-n string 测试指定字符串是否为不空，空为假 非空为真<br>-e FILE 测试文件是否存在<br>-f file 测试文件是否为普通文件<br>-d file 测试指定路径是否为目录<br>-r file 测试文件对当前用户是否可读<br>-w file 测试文件对当前用户是否可写<br>-x file 测试文件对当前用户是都可执行<br>-z  是否为空  为空则为真<br>-a  是否不空</p>
 <p>五、if语法</p>
