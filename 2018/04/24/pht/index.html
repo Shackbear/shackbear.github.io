@@ -3,24 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Python中read()、readline()和readlines()三者间的区别和用法 | </title>
+    <title>python3爬取不可描述的内容 | </title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="python" />
     
-    <meta name="description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
+    <meta name="description" content="这段代码是针对某个网站专门写的爬取图片的，但是可以复用到其他架构类似的站点，请自行理解哈哈save_pic()函数是借鉴网上其他大神的，我修改复用了一下感觉自己写的很凌乱，这算是个新手试水，以后要做更光明的事情，这个就打算先不完善了~下面就是这段代码的内容，如果想实验，请自行pip3安装缺少的模块。 1234567891011121314151617181920212223242526272829">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python中read()、readline()和readlines()三者间的区别和用法">
-<meta property="og:url" content="http://fengjianxiong.cn/2018/03/20/Python中read、readline和readlines三者间的区别和用法/index.html">
+<meta property="og:title" content="python3爬取不可描述的内容">
+<meta property="og:url" content="http://fengjianxiong.cn/2018/04/24/pht/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
+<meta property="og:description" content="这段代码是针对某个网站专门写的爬取图片的，但是可以复用到其他架构类似的站点，请自行理解哈哈save_pic()函数是借鉴网上其他大神的，我修改复用了一下感觉自己写的很凌乱，这算是个新手试水，以后要做更光明的事情，这个就打算先不完善了~下面就是这段代码的内容，如果想实验，请自行pip3安装缺少的模块。 1234567891011121314151617181920212223242526272829">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-19T20:46:54.028Z">
+<meta property="og:image" content="http://fengjianxiong.cn/img/python.jpg">
+<meta property="og:updated_time" content="2018-04-24T11:26:26.526Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python中read()、readline()和readlines()三者间的区别和用法">
-<meta name="twitter:description" content="==前言==众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍： ==准备==假设a.txt的内容如下所示： 123HelloWelc">
+<meta name="twitter:title" content="python3爬取不可描述的内容">
+<meta name="twitter:description" content="这段代码是针对某个网站专门写的爬取图片的，但是可以复用到其他架构类似的站点，请自行理解哈哈save_pic()函数是借鉴网上其他大神的，我修改复用了一下感觉自己写的很凌乱，这算是个新手试水，以后要做更光明的事情，这个就打算先不完善了~下面就是这段代码的内容，如果想实验，请自行pip3安装缺少的模块。 1234567891011121314151617181920212223242526272829">
+<meta name="twitter:image" content="http://fengjianxiong.cn/img/python.jpg">
     
 
     
@@ -131,14 +133,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-Python中read、readline和readlines三者间的区别和用法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-pht" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Python中read()、readline()和readlines()三者间的区别和用法
+        python3爬取不可描述的内容
         </h1>
     
 
@@ -148,8 +150,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/03/20/Python中read、readline和readlines三者间的区别和用法/" class="article-date">
-            <time datetime="2018-03-19T17:42:31.000Z" itemprop="datePublished">2018-03-20</time>
+        <a href="/2018/04/24/pht/" class="article-date">
+            <time datetime="2018-04-24T11:15:16.000Z" itemprop="datePublished">2018-04-24</time>
         </a>
     </div>
 
@@ -163,29 +165,8 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="前言"><a href="#前言" class="headerlink" title="==前言=="></a>==前言==</h4><p>众所周知在python中读取文件常用的三种方法：read(),readline(),readlines()，今天看项目是又忘记他们的区别了。以前看书的时候觉得这东西很简单，一眼扫过，待到用时却也只知道有这么几个方法，不懂得它的原理与用法。也许吧，没有永远的记忆，况且根本没有用心去记它。话不多说，来一起看看详细的介绍：</p>
-<h4 id="准备"><a href="#准备" class="headerlink" title="==准备=="></a>==准备==</h4><p>假设a.txt的内容如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>一、read([size])方法</p>
-<p>read([size])方法从文件当前位置起读取size个字节，若无参数size，则表示读取至文件结束为止，它范围为字符串对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">lines = f.read()</span><br><span class="line">print lines</span><br><span class="line">print(type(lines))</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br><span class="line">&lt;type &apos;str&apos;&gt;  #字符串类型</span><br></pre></td></tr></table></figure></p>
-<p>二、readline()方法</p>
-<p>从字面意思可以看出，该方法每次读出一行内容，所以，读取时占用内存小，比较适合大文件，该方法返回一个字符串对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">line = f.readline()</span><br><span class="line">print(type(line))</span><br><span class="line">while line:</span><br><span class="line">   print line,</span><br><span class="line">   line = f.readline()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;type &apos;str&apos;&gt;</span><br><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>三、readlines()方法读取整个文件所有行，保存在一个列表(list)变量中，每行作为一个元素，但读取大文件会比较占内存。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(&quot;a.txt&quot;)</span><br><span class="line">lines = f.readlines()</span><br><span class="line">print(type(lines))</span><br><span class="line">for line in lines:</span><br><span class="line">   print line，</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;type &apos;list&apos;&gt;</span><br><span class="line">Hello</span><br><span class="line">Welcome</span><br><span class="line">What is the fuck...</span><br></pre></td></tr></table></figure>
-<p>四、linecache模块</p>
-<p>当然，有特殊需求还可以用linecache模块，比如你要输出某个文件的第n行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#输出第2行   </span><br><span class="line"></span><br><span class="line">text = linecache.getline(&apos;a.txt&apos;,2)</span><br><span class="line">print text</span><br></pre></td></tr></table></figure>
-<p>对于大文件效率还可以。</p>
-<p>==总结==</p>
-<p>以上就是这篇文章的全部内容了，希望本文的内容对大家的学习或者工作能带来一定的帮助。</p>
-
+            <p>这段代码是针对某个网站专门写的爬取图片的，但是可以复用到其他架构类似的站点，请自行理解哈哈<br>save_pic()函数是借鉴网上其他大神的，我修改复用了一下<br>感觉自己写的很凌乱，这算是个新手试水，以后要做更光明的事情，这个就打算先不完善了~<br>下面就是这段代码的内容，如果想实验，请自行pip3安装缺少的模块。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">#coding:utf-8</span><br><span class="line"></span><br><span class="line">import requests</span><br><span class="line">import os</span><br><span class="line">from os import path</span><br><span class="line">import re</span><br><span class="line">import datetime</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">global site</span><br><span class="line">global headers</span><br><span class="line">site = &quot;http://www.46ek.com&quot;</span><br><span class="line">headers = &#123;&apos;User-Agent&apos;:&apos;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36&apos;&#125;</span><br><span class="line"></span><br><span class="line">def select():</span><br><span class="line">    global site</span><br><span class="line">    global headers</span><br><span class="line">    mum = [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;,&apos;5&apos;,&apos;6&apos;,&apos;7&apos;,&apos;8&apos;]</span><br><span class="line">    req = requests.get(site,headers=headers)</span><br><span class="line">    req.encoding=&apos;GBK&apos;</span><br><span class="line">    html = req.text</span><br><span class="line">    title = re.findall(r&apos;(/html/part/.*\.html)&quot;&gt;(.*)&lt;/a&gt;&lt;/li&apos;,html) #获取图片</span><br><span class="line">    for i in range(0,8):</span><br><span class="line">        print(title[i][1],i+1,&apos;\n&apos;)</span><br><span class="line">    print(u&apos;Witch B number would you like? &apos;)</span><br><span class="line">    select_num = input(&apos;:&apos;)</span><br><span class="line">    for i in range(0,2):            #选择三次失败退出</span><br><span class="line">        if select_num not in mum:</span><br><span class="line">            print(&quot;只能输入数字（1-8）,还剩&quot;,2-int(i),&quot;次机会！&quot;)</span><br><span class="line">            select_num = input(&apos;Witch B number would you like? :&apos;)</span><br><span class="line">        else:</span><br><span class="line">            select_url = str(site+title[int(select_num)-1][0])</span><br><span class="line">            break</span><br><span class="line">    return select_url</span><br><span class="line">     </span><br><span class="line">def geturl(website):</span><br><span class="line">    global site</span><br><span class="line">    global headers</span><br><span class="line">    hw = website</span><br><span class="line">    req = requests.get(website,headers = headers)</span><br><span class="line">    req.encoding=&apos;GBK&apos;</span><br><span class="line">    html = req.text</span><br><span class="line">    pattern = re.compile(r&quot;/html/article/[0-9]&#123;1,&#125;.html&quot;)</span><br><span class="line">    last_page_num = re.findall(r&apos;href=&quot;/html/part/[0-9]&#123;1,&#125;_([0-9]&#123;1,&#125;).html&quot;&gt;尾页&lt;/a&apos;,html)[0] #获取尾页的编号</span><br><span class="line">    print(&quot;\t\t此类文章共有&#123;&#125;页,正在下载第一页内所有文章的图片...&quot;.format(last_page_num))</span><br><span class="line">    pages = pattern.findall(html)   #获取图片页面url</span><br><span class="line">    for page in pages:   #合并这些图片页得链接</span><br><span class="line">        page = site+page</span><br><span class="line">        print(&apos;1&apos;,page)</span><br><span class="line">        get_pic_url(page) #取图片url后十位为文件名</span><br><span class="line">        #break       #加上此break，可以实现一页（选择n/N）或每页(y/Y)下载置顶文章内的picture</span><br><span class="line">        time.sleep(2)        </span><br><span class="line">    one_all = input(&apos;Do you want download all pictures by this class？【Y/N】 &apos;)</span><br><span class="line">    if one_all == &apos;Y&apos; or one_all == &apos;y&apos;:</span><br><span class="line">        for i in range(2,int(last_page_num)+1):</span><br><span class="line">            website = hw.split(&quot;.html&quot;)[0]+&quot;_&quot;+str(i)+&quot;.html&quot;</span><br><span class="line">            print(website)</span><br><span class="line">            req = requests.get(website,headers = headers)</span><br><span class="line">            req.encoding=&apos;GBK&apos;</span><br><span class="line">            html = req.text</span><br><span class="line">            pages = pattern.findall(html)   #获取图片页面url</span><br><span class="line">            for page in pages:   #合并这些图片页得链接</span><br><span class="line">                page = site+page</span><br><span class="line">                get_pic_url(page) #取图片url后十位为文件名</span><br><span class="line">                #break       </span><br><span class="line">                time.sleep(2)</span><br><span class="line">    elif one_all == &apos;n&apos; or one_all == &apos;N&apos;:</span><br><span class="line">        print(&quot;You chose &#123;&#125;，so my work is done，bye bye！&quot;.format(one_all))</span><br><span class="line">    else:</span><br><span class="line">        print(u&apos;Input error key !&apos;)</span><br><span class="line">    return</span><br><span class="line"></span><br><span class="line">def get_pic_url(url):</span><br><span class="line">    global headers</span><br><span class="line">    path = &apos;&apos;</span><br><span class="line">    req = requests.get(url,headers = headers)</span><br><span class="line">    req.encoding=&apos;GBK&apos;</span><br><span class="line">    html = req.text    </span><br><span class="line">    pattern = re.compile(r&quot;http://img[0-9].26ts.com/[0-9]&#123;4&#125;/[0-9]&#123;2&#125;-[0-9]&#123;2&#125;/[0-9a-zA-Z]&#123;1,&#125;.jpg&quot;)</span><br><span class="line">    title = re.findall(&quot;title&gt;(.*)&lt;/title&quot;,html)[0].split(&quot; -&quot;)[0] #获取标题</span><br><span class="line">    p=re.compile(&apos;\?|\||\/|\*|\:|\&quot;|\&lt;|\&gt;&apos;)  #文件夹名去符号</span><br><span class="line">    title = p.sub(&apos;&apos;,title)</span><br><span class="line">    print(&quot;\t\t正在创建&apos;&#123;&#125;&apos;目录...&quot;.format(title))</span><br><span class="line">    match = pattern.findall(html)   #获取图片url</span><br><span class="line">    try:                        #创建目录</span><br><span class="line">        os.makedirs(&apos;&#123;&#125;\\&apos;.format(title))</span><br><span class="line">    except FileExistsError:</span><br><span class="line">        print(&quot;WARNNING：“&#123;&#125;”这个目录已经存在！请检查！&quot;.format(title))</span><br><span class="line">    for pic in match:   #保存本页图片       </span><br><span class="line">        path = str(&apos;&#123;&#125;\\&apos;.format(title))+pic[-10:] #取图片url后十位为文件名</span><br><span class="line">        print(path)</span><br><span class="line">        save_pic(pic,path)</span><br><span class="line">    return</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def save_pic(pic_url,pic_name):</span><br><span class="line"></span><br><span class="line">    print(&quot;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - &quot;)</span><br><span class="line">    time1=datetime.datetime.now()  </span><br><span class="line">    #print(str(time1)[:-7],)</span><br><span class="line">    if (os.path.isfile(pic_name)):</span><br><span class="line">        file_size=os.path.getsize(pic_name)/1024/1024</span><br><span class="line">        print(&quot;File &quot;+pic_name+&quot; (&quot;+ str(round(file_size,2))+&quot;Mb) already exists.&quot;)</span><br><span class="line">        return</span><br><span class="line">    else:   </span><br><span class="line">        print(&quot;Downloading &quot;+pic_name+&quot;...&quot;)</span><br><span class="line">        r = requests.get(pic_url,stream=True)</span><br><span class="line">        with open(pic_name.encode(&apos;utf-8&apos;), &quot;wb&quot;) as code:</span><br><span class="line">            code.write(r.content) </span><br><span class="line">        time2=datetime.datetime.now()</span><br><span class="line">        #print(str(time2)[:-7],)</span><br><span class="line">        print(pic_name.split(&apos;\\&apos;)[-1]+&apos; Done.&apos;)</span><br><span class="line">        use_time=time2-time1</span><br><span class="line">        file_size=os.path.getsize(pic_name)/1024/1024</span><br><span class="line">        print(&quot;File size: &quot;+str(round(file_size,2))+&quot; MB, Speed: &quot;+str(file_size/(use_time.total_seconds()))[:4]+&quot;MB/s&quot;+&quot;Time used: &quot;+str(use_time)[:-7])</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    print(&apos;&apos;&apos;</span><br><span class="line">说明：46ek定制版download利器</span><br><span class="line">作者：feng</span><br><span class="line">日期：2018年4月18日</span><br><span class="line">版本：1.0</span><br><span class="line">&apos;&apos;&apos;)</span><br><span class="line">    geturl(select())</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
@@ -280,20 +261,10 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/2018/03/22/python实现readline去掉换行符/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            python实现readline去掉换行符\n等特殊字符
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/03/18/centos6和centos7修改网卡名的几种方法/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/21/shellif/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">centos6和centos7修改网卡名的几种方法</p>
+        <p class="article-nav-title">shell中if语句的使用</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -499,7 +470,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     var disqus_shortname = 'disque';
     
     
-    var disqus_url = 'http://fengjianxiong.cn/2018/03/20/Python中read、readline和readlines三者间的区别和用法/';
+    var disqus_url = 'http://fengjianxiong.cn/2018/04/24/pht/';
     
     (function() {
     var dsq = document.createElement('script');
